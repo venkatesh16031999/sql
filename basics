@@ -1,0 +1,57 @@
+CREATE TABLE blockchain ( techname varchar(30), popularity number(5) , language varchar(30) );
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+type 1
+
+INSERT INTO blockchain  VALUES ('Ethereum',1,'Solidity');
+
+INSERT INTO blockchain  VALUES ('Hyperledger Fabric',2,'Node.js');
+
+type 2
+
+INSERT INTO blockchain VALUES ( '&techname' , &popularity , '&language' );
+
+type 3
+
+INSERT INTO blockchain (techname,popularity,language) VALUES ('Ethereum',1,'Simplicity');
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+SELECT * from blockchain;
+
+
+
+ORDER BY num ASC || DESC;
+GROUP BY --->>> HAVING 
+
+
+SELECT 
+FROM
+WHERE
+GROUP BY
+HAVING
+ORDER BY
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+ALTER TABLE blockchain ADD marks Number(4);
+
+ALTER TABLE blockchain DROP COLUMN marks;
+
+ALTER TABLE blockchain ADD CONSTRAINT C1 unique (popularity);
+
+ALTER TABLE blockchain DROP constraint C1 ;
+
+///////////////////////////////////////////////////////////
+
+update blockchain set marks=60 where popularity=1;
+
+
+
+
+CREATE SEQUENCE sequence-name
+    START WITH initial-value
+    INCREMENT BY increment-value
+    MAXVALUE maximum-value
+    CYCLE | NOCYCLE;
