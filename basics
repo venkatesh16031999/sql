@@ -20,18 +20,39 @@ INSERT INTO blockchain (techname,popularity,language) VALUES ('Ethereum',1,'Simp
 
 SELECT * from blockchain;
 
+SELECT productid,sum(Quantity)as total_quantity FROM [OrderDetails] group by productid;
 
+SELECT productid,sum(Quantity)as total_quantity FROM [OrderDetails] group by productid order by total_quantity desc;
+
+SELECT productid,sum(Quantity) as total_quantity FROM [OrderDetails] group by productid having total_quantity>50 order by total_quantity desc;
+
+SELECT * FROM [Suppliers] where city like "%m";
+
+SELECT * FROM [Suppliers] where city like '%l%';    (if word contains l);
+
+
+SELECT * FROM [Orders] join shippers on orders.shipperid=shippers.shipperid where orderid=10248;
+
+wild cards:
+
+% - 0 or many
+_ - 1 char
+
+^ - not including remaining
 
 ORDER BY num ASC || DESC;
 GROUP BY --->>> HAVING 
 
+orders to write :
 
-SELECT 
-FROM
-WHERE
-GROUP BY
-HAVING
-ORDER BY
+1.SELECT 
+2.FROM
+3.WHERE
+4.GROUP BY
+5.HAVING
+6.ORDER BY
+
+group by comes with aggregate always
 
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 
@@ -55,3 +76,10 @@ CREATE SEQUENCE sequence-name
     INCREMENT BY increment-value
     MAXVALUE maximum-value
     CYCLE | NOCYCLE;
+
+
+/////////////////////////////////////////////////////////////
+
+sub queries runs first
+
+SELECT * FROM blockchain WHERE popularity>(SELECT * FROM blockchain2)
